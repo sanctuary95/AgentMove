@@ -9,7 +9,7 @@ from geopy.extra.rate_limiter import RateLimiter
 
 from config import NO_ADDRESS_TRAJ_DIR, NOMINATIM_PATH, PROXY
 
-CURRENT_CITY = "Moscow"
+CURRENT_CITY = "New York"
 
 
 def reverse_geocode(lat, lon):
@@ -55,7 +55,8 @@ if __name__ == '__main__':
     q = Queue()
     running = True
     
-    thread = threading.Thread(target=save_worker, daemon=True).start()
+    thread = threading.Thread(target=save_worker, daemon=True)
+    thread.start()
     
     venue_map = {}
     cities = []

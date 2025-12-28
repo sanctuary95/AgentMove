@@ -25,80 +25,59 @@ def get_api_key(platform, model_name=None):
         return os.environ["SiliconFlow_API_KEY"]
     elif platform=="OpenRouter":
         return os.environ["OpenRouter_API_KEY"]
+    elif platform=="TogetherAI":
+        return os.environ["TOGETHER_API_KEY"]
 
 
 class LLMAPI:
     def __init__(self, model_name, platform=None):
         self.model_name = model_name
-        
-        self.platform_list = ["SiliconFlow", "OpenAI", "DeepInfra", 'vllm', "OpenRouter"]
+
+        # === 2) platform_list 增加 TogetherAI ===
+        self.platform_list = ["SiliconFlow", "OpenAI", "DeepInfra", 'vllm', "OpenRouter", "TogetherAI"]
+
+        # === 3) model_platforms 增加 TogetherAI（示例：先放你需要的几个短名）===
         self.model_platforms = {
-                    "SiliconFlow":  ['qwen2.5-72b', 'qwen2.5-7b', 'qwen2-1.5b', 'qwen2-7b', 'qwen2-14b', 'qwen2-72b', 'glm4-9b', 'glm3-6b', 'deepseekv2', 'qwen2-1.5b-pro', 'qwen2-7b-pro', 'glm4-9b-pro', 'glm3-6b-pro'],
-                    "OpenAI":       [],
-                    "OpenRouter":   ['gpt35turbo', 'gpt4turbo', 'gpt4o', 'gpt4omini'],
-                    "DeepInfra":    ['llama4-17b', 'llama3-8b', 'llama3-70b', 'gemma2-9b', 'gemma2-27b', 'mistral7bv2', 'llama3.1-8b', 'llama3.1-70b', 'mistral7bv3', 'llama3.1-405b'],
-                    "vllm":         ['llama3-8B-local', 'gemma2-2b-local', 'chatglm3-citygpt', 'chatglm3-6B-local']
-                }
-        
-        self.model_mapper = {
-            'qwen2.5-7b': "Qwen/Qwen2.5-7B-Instruct",
-            'qwen2.5-72b': "Qwen/Qwen2.5-72B-Instruct",
-            'gpt35turbo': 'gpt-3.5-turbo-0125',
-            'gpt4turbo': 'gpt-4-turbo-2024-04-09',
-            'gpt4o': 'gpt-4o-2024-05-13',
-            'gpt4omini': 'gpt-4o-mini-2024-07-18',
-            'llama3-8b': 'meta-llama/Meta-Llama-3-8B-Instruct',
-            'llama3.1-8b': 'meta-llama/Meta-Llama-3.1-8B-Instruct',
-            'llama3-8b-pro': 'Pro/meta-llama/Meta-Llama-3-8B-Instruct',
-            'llama3-70b': 'meta-llama/Meta-Llama-3-70B-Instruct',
-            'llama3.1-70b': 'meta-llama/Meta-Llama-3.1-70B-Instruct',
-            'llama3.1-405b': 'meta-llama/Meta-Llama-3.1-405B-Instruct',
-            "llama4-17b": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-            'llama2-7b': 'meta-llama/Llama-2-7b-chat-hf',
-            'llama2-13b': 'meta-llama/Llama-2-13b-chat-hf',
-            'llama2-70b': 'meta-llama/Llama-2-70b-chat-hf',
-            'gemma2-9b': 'google/gemma-2-9b-it',
-            'gemma2-9b-pro': 'Pro/google/gemma-2-9b-it',
-            'gemma2-27b': 'google/gemma-2-27b-it',
-            'mistral7bv2': 'mistralai/Mistral-7B-Instruct-v0.2',
-            'mistral7bv3': 'mistralai/Mistral-7B-Instruct-v0.3',
-            'mistral7bv2-pro': 'Pro/mistralai/Mistral-7B-Instruct-v0.2',
-            'qwen2-1.5b': 'Qwen/Qwen2-1.5B-Instruct',
-            'qwen2-1.5b-pro': 'Pro/Qwen/Qwen2-1.5B-Instruct',
-            'qwen2-7b': 'Qwen/Qwen2-7B-Instruct',
-            'qwen2-7b-pro': "Pro/Qwen/Qwen2-7B-Instruct",
-            'qwen2-14b': 'Qwen/Qwen2-57B-A14B-Instruct',
-            'qwen2-72b': 'Qwen/Qwen2-72B-Instruct',
-            'glm4-9b': 'THUDM/glm-4-9b-chat',
-            'glm4-9b-pro': 'Pro/THUDM/glm-4-9b-chat',
-            'glm3-6b': 'THUDM/chatglm3-6b',
-            'glm3-6b-pro': 'Pro/THUDM/chatglm3-6b',
-            'deepseekv2': 'deepseek-ai/DeepSeek-V2-Chat',
-            'llama3-8B-local':'llama3-8B-local',
-            'gemma2-2b-local': 'gemma2-2b-local',
-            'chatglm3-citygpt': 'chatglm3-citygpt',
-            'chatglm3-6B-local': 'chatglm3-6B-local'
+            "SiliconFlow":  [...],
+            "OpenAI":       [],
+            "OpenRouter":   [...],
+            "DeepInfra":    [...],
+            "vllm":         [...],
+            "TogetherAI":   [ 'llama3.3-70b-together', 'Qwen 2.5 72B Instruct Turbo', 'DeepSeek-V3.1', 'Llama 3.1 8B Instruct Turbo']  # 你可以按需增删
         }
 
-        support_models = ";".join([";".join(self.model_platforms[k]) for k in self.model_platforms])
-        if self.model_name not in support_models:
-            raise ValueError('Invalid model name! Please use one of the following: {}'.format(support_models))
+        # === 4) model_mapper 增加 TogetherAI 模型映射 ===
+        self.model_mapper = {
+                'llama3.3-70b-together': 'meta-llama/Llama-3.3-70B-Instruct-Turbo',
+                'Qwen 2.5 72B Instruct Turbo': 'Qwen/Qwen2.5-72B-Instruct-Turbo',
+                'DeepSeek-V3.1': 'deepseek-ai/DeepSeek-V3.1',
+                'Llama 3.1 8B Instruct Turbo': 'meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo',
+                
+        }
+        # Decide platform
+        self.platform = None
         
+        # 如果用户显式传了 platform 且合法，就用它
         if platform is not None and platform in self.platform_list:
             self.platform = platform
         else:
-            for platform in self.platform_list:
-                if self.model_name in self.model_platforms[platform]:
-                    self.platform = platform
+            # 否则根据 model_name 自动匹配
+            for p in self.platform_list:
+                if self.model_name in self.model_platforms.get(p, []):
+                    self.platform = p
                     break
-
-        if self.platform is None:
-            raise ValueError("'Invalid API platform:{} with model:{}".format(self.platform, self.model_name))
-
-        if self.model_name not in self.model_platforms[self.platform]:
-            raise ValueError('Invalid model name! Please use one of the following: {} in API platform:{}'.format(support_models, self.platform))
         
+        if self.platform is None:
+            raise ValueError(f"Invalid API platform:{self.platform} with model:{self.model_name}")
+        
+        # 校验：模型名必须属于该平台
+        if self.model_name not in self.model_platforms[self.platform]:
+            support_models = ";".join([";".join(self.model_platforms[k]) for k in self.model_platforms])
+            raise ValueError(
+                f"Invalid model name {self.model_name}! Please use one of: {support_models} in platform {self.platform}"
+            )
 
+        # === 5) client 初始化增加 TogetherAI ===
         if self.platform == "OpenAI":
             self.client = OpenAI(
                 api_key=get_api_key(platform),
@@ -125,6 +104,12 @@ class LLMAPI:
             self.client = OpenAI(
                 base_url=VLLM_URL,
                 api_key=get_api_key(platform)
+            )
+        elif self.platform == "TogetherAI":
+            self.client = OpenAI(
+                base_url="https://api.together.xyz/v1",
+                api_key=get_api_key(platform),
+                http_client=httpx.Client(proxies=PROXY),
             )
     
     def get_client(self):

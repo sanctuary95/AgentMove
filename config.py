@@ -2,10 +2,11 @@
 import os
 
 # 其他配置
-PROXY = "http://127.0.0.1:10190" # you should prepare your proxy server
+PROXY = None
+# "http://127.0.0.1:10190" # you should prepare your proxy server
 # EXP_CITIES = ['Tokyo', 'Nairobi', 'NewYork', 'Sydney', 'CapeTown', 'Paris', 'Beijing', 'Mumbai', 'SanFrancisco', 'London', 'SaoPaulo', 'Moscow']
 # EXP_CITIES = ["Beijing"] # use it for quickly start
-EXP_CITIES = ["Shanghai"] # for WWW2019
+EXP_CITIES = ["New York"] # for WWW2019
 
 # 'TIST2015'
 DATASET = 'TIST2015' # format which used by TIST2015 and WWW2019
@@ -22,10 +23,10 @@ NOMINATIM_DEPLOY_SERVER = os.environ["nominatim_deploy_server_address"] # IP: PO
 NOMINATIM_DEPLOY_WORKERS = 20 # Number of parallel workers for address matching
 
 NO_ADDRESS_TRAJ_DIR = "data/input_trajectories/"  # Trajectory data without addresses after city division from Foursquare, input data for fsq_address_deploy, output data from process_city_data
-NO_ADDRESS_WEIBO_TRAJ_DIR = "{}/input/".format(WWW2019_DATA_DIR)
+NO_ADDRESS_WEIBO_TRAJ_DIR = "{}/input/".format(TIST2015_DATA_DIR)
 NOMINATIM_PATH = 'data/nominatim/'                # Path where address data is saved after requesting address service, output data for fsq_address_deploy
 ADDRESS_L4_DIR = "data/address_L4/"                # Processed and formatted Nominatim address data into a 4-level address structure
-ADDRESS_L4_FORMAT_MODEL = "llama3-8b" # Name of the LLM used for 4-level address formatting
+ADDRESS_L4_FORMAT_MODEL = "llama3.3-70b-together" # Name of the LLM used for 4-level address formatting
 ADDRESS_L4_WORKERS = 50                # Number of parallel workers for address formatting
 
 # Final Data

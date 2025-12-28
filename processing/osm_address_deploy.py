@@ -39,8 +39,8 @@ def geocode_extract(city, venue, lon, lat):
     item_info = {
                 "city": city,
                 "venue_id": venue,
-                "lng": lon,
-                "lat": lat,
+                "Lng": Lon,
+                "Lat": Lat,
                 "address": addr 
             }
     return item_info

@@ -16,12 +16,12 @@ from config import DATASET, NOMINATIM_PATH, NO_ADDRESS_TRAJ_DIR, CITY_DATA_DIR, 
 
 
 def get_normalize_city_name(city_name):
-    city_mapping = {"Cape Town":"CapeTown", "New York": "NewYork", "San Francisco": "SanFrancisco", "Sao Paulo": "SaoPaulo"}
+    city_mapping = {"New York": "New York"}
     return city_mapping.get(city_name, city_name)
 
 def get_response(address):
     # system_messages = [{"role": "system", "content": "You are a helpful assistant for Address Parsing."}]
-    llm_client = LLMWrapper(ADDRESS_L4_FORMAT_MODEL)
+    llm_client = LLMWrapper(ADDRESS_L4_FORMAT_MODEL, platform="TogetherAI")
     prompt_text = "You are a helpful assistant for Address Parsing.\n" + address + """Please get the Administrative Area Name, subdistrict name/neighbourhood name,access road or feeder road name, building name/POI name. \nPresent your answer in a JSON object with:'administrative' (the Administrative Area Name) ,'subdistrict' (subdistrict name/neighbourhood name),'poi'(building name/POI name),'street'(access road or feeder road name which POI/building is on). \nDo not include the key if information is not given.Do not output other content."""
     try:
         full_text = llm_client.get_response(prompt_text)
