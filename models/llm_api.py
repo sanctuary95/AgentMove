@@ -38,12 +38,12 @@ class LLMAPI:
 
         # === 3) model_platforms 增加 TogetherAI（示例：先放你需要的几个短名）===
         self.model_platforms = {
-            "SiliconFlow":  [...],
+            "SiliconFlow":  [],
             "OpenAI":       [],
-            "OpenRouter":   [...],
-            "DeepInfra":    [...],
-            "vllm":         [...],
-            "TogetherAI":   [ 'llama3.3-70b-together', 'Qwen 2.5 72B Instruct Turbo', 'DeepSeek-V3.1', 'Llama 3.1 8B Instruct Turbo']  # 你可以按需增删
+            "OpenRouter":   [],
+            "DeepInfra":    [],
+            "vllm":         [],
+            "TogetherAI":   [ 'llama3.3-70b-together', 'Qwen 2.5 72B Instruct Turbo', 'DeepSeek-V3.1', 'Llama 3.1 8B Instruct Turbo','DeepSeek-R1-0528','GPT-OSS 20B']  # 你可以按需增删
         }
 
         # === 4) model_mapper 增加 TogetherAI 模型映射 ===
@@ -52,6 +52,8 @@ class LLMAPI:
                 'Qwen 2.5 72B Instruct Turbo': 'Qwen/Qwen2.5-72B-Instruct-Turbo',
                 'DeepSeek-V3.1': 'deepseek-ai/DeepSeek-V3.1',
                 'Llama 3.1 8B Instruct Turbo': 'meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo',
+                'DeepSeek-R1-0528': 'deepseek-ai/DeepSeek-R1',
+                'GPT-OSS 20B': 'openai/gpt-oss-20b'
                 
         }
         # Decide platform
@@ -131,7 +133,8 @@ class LLMWrapper:
         self.hyperparams = {
             'temperature': 0.,  # make the LLM basically deterministic
             'max_new_tokens': 100, # not used in OpenAI API
-            'max_tokens': 1000,    # The maximum number of [tokens](/tokenizer) that can be generated in the completion.
+            'max_tokens': 10000,  
+            'reasoning_effort': "high",
             'max_input_tokens': 2000 # The maximum number of input tokens
         }
         
