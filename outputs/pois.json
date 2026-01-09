@@ -1,0 +1,1842 @@
+{
+  "center": {
+    "lat": 40.693834,
+    "lon": -73.960669
+  },
+  "radius_m": 800,
+  "count": 190,
+  "category_counts_top": [
+    {
+      "type": "amenity=bicycle_parking",
+      "count": 46
+    },
+    {
+      "type": "shop=convenience",
+      "count": 20
+    },
+    {
+      "type": "tourism=artwork",
+      "count": 12
+    },
+    {
+      "type": "leisure=picnic_table",
+      "count": 10
+    },
+    {
+      "type": "shop=hairdresser",
+      "count": 9
+    },
+    {
+      "type": "amenity=fast_food",
+      "count": 8
+    },
+    {
+      "type": "amenity=cafe",
+      "count": 5
+    },
+    {
+      "type": "shop=laundry",
+      "count": 5
+    },
+    {
+      "type": "amenity=school",
+      "count": 4
+    },
+    {
+      "type": "amenity=place_of_worship",
+      "count": 4
+    },
+    {
+      "type": "amenity=restaurant",
+      "count": 4
+    },
+    {
+      "type": "shop=alcohol",
+      "count": 4
+    },
+    {
+      "type": "shop=supermarket",
+      "count": 4
+    },
+    {
+      "type": "leisure=fitness_centre",
+      "count": 4
+    },
+    {
+      "type": "shop=mobile_phone",
+      "count": 3
+    },
+    {
+      "type": "shop=clothes",
+      "count": 3
+    },
+    {
+      "type": "shop=dry_cleaning",
+      "count": 3
+    },
+    {
+      "type": "amenity=fire_station",
+      "count": 2
+    },
+    {
+      "type": "amenity=bar",
+      "count": 2
+    },
+    {
+      "type": "amenity=pharmacy",
+      "count": 2
+    },
+    {
+      "type": "amenity=kindergarten",
+      "count": 2
+    },
+    {
+      "type": "tourism=gallery",
+      "count": 2
+    },
+    {
+      "type": "shop=florist",
+      "count": 2
+    },
+    {
+      "type": "shop=variety_store",
+      "count": 2
+    },
+    {
+      "type": "shop=tattoo",
+      "count": 2
+    },
+    {
+      "type": "shop=craft",
+      "count": 2
+    },
+    {
+      "type": "leisure=sports_centre",
+      "count": 2
+    },
+    {
+      "type": "amenity=fortune_teller",
+      "count": 1
+    },
+    {
+      "type": "amenity=dentist",
+      "count": 1
+    },
+    {
+      "type": "amenity=arts_centre",
+      "count": 1
+    }
+  ],
+  "pois": [
+    {
+      "osm_type": "node",
+      "osm_id": 357573242,
+      "lat": 40.6984361,
+      "lon": -73.9595827,
+      "name": "New York Community College of Applied Arts and Sciences",
+      "category": "amenity",
+      "value": "school"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 357619918,
+      "lat": 40.7008684,
+      "lon": -73.9621416,
+      "name": "Talmud Torah Toldos Hillel-Krasna",
+      "category": "amenity",
+      "value": "school"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 357625090,
+      "lat": 40.6884052,
+      "lon": -73.9657328,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 357630669,
+      "lat": 40.6922222,
+      "lon": -73.9586111,
+      "name": "Knowledge And Power Preparatory VII Middle School",
+      "category": "amenity",
+      "value": "school"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 357647375,
+      "lat": 40.6933083,
+      "lon": -73.9683009,
+      "name": "Revelation Church of God in Christ",
+      "category": "amenity",
+      "value": "place_of_worship"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 368047013,
+      "lat": 40.6956185,
+      "lon": -73.9565358,
+      "name": "New York Engine Company 209",
+      "category": "amenity",
+      "value": "fire_station"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 368047827,
+      "lat": 40.6955875,
+      "lon": -73.9565287,
+      "name": "New York Ladder Company 102",
+      "category": "amenity",
+      "value": "fire_station"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419359800,
+      "lat": 40.6930944,
+      "lon": -73.9684288,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419359853,
+      "lat": 40.6940452,
+      "lon": -73.9602627,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419359883,
+      "lat": 40.693582,
+      "lon": -73.9650172,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419359890,
+      "lat": 40.6933476,
+      "lon": -73.9662369,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419360097,
+      "lat": 40.6932371,
+      "lon": -73.968389,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419360198,
+      "lat": 40.6931327,
+      "lon": -73.9680862,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419360413,
+      "lat": 40.6935984,
+      "lon": -73.9648621,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419360713,
+      "lat": 40.6932395,
+      "lon": -73.9671666,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419361144,
+      "lat": 40.6935546,
+      "lon": -73.9653093,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419361195,
+      "lat": 40.6936991,
+      "lon": -73.964324,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419361363,
+      "lat": 40.6931875,
+      "lon": -73.967621,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419361636,
+      "lat": 40.6885449,
+      "lon": -73.963527,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419361822,
+      "lat": 40.6896236,
+      "lon": -73.965238,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419361955,
+      "lat": 40.6879469,
+      "lon": -73.9648074,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419361972,
+      "lat": 40.6938691,
+      "lon": -73.9616345,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419362022,
+      "lat": 40.6930695,
+      "lon": -73.969989,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419362303,
+      "lat": 40.6934507,
+      "lon": -73.9664561,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419362487,
+      "lat": 40.6914783,
+      "lon": -73.9675681,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419362719,
+      "lat": 40.6922164,
+      "lon": -73.9687191,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419363226,
+      "lat": 40.6932018,
+      "lon": -73.9696909,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419363678,
+      "lat": 40.6934961,
+      "lon": -73.9661032,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419363710,
+      "lat": 40.6932837,
+      "lon": -73.9679851,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419363944,
+      "lat": 40.6933713,
+      "lon": -73.9672242,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419364066,
+      "lat": 40.6932808,
+      "lon": -73.9659554,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419364266,
+      "lat": 40.693059,
+      "lon": -73.9693231,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419364530,
+      "lat": 40.6886036,
+      "lon": -73.9670138,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419364613,
+      "lat": 40.6939762,
+      "lon": -73.9618688,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419364629,
+      "lat": 40.6878769,
+      "lon": -73.9625658,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419364725,
+      "lat": 40.6939324,
+      "lon": -73.9621934,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419364873,
+      "lat": 40.6938335,
+      "lon": -73.9618978,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419365621,
+      "lat": 40.6942007,
+      "lon": -73.9600332,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419365930,
+      "lat": 40.6933763,
+      "lon": -73.9657746,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419366058,
+      "lat": 40.6908666,
+      "lon": -73.9664735,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419366431,
+      "lat": 40.6938445,
+      "lon": -73.9618112,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419366514,
+      "lat": 40.6916789,
+      "lon": -73.959727,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419366544,
+      "lat": 40.6934123,
+      "lon": -73.9668636,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419366679,
+      "lat": 40.6941049,
+      "lon": -73.9608843,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419366753,
+      "lat": 40.69294,
+      "lon": -73.9697052,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419367628,
+      "lat": 40.6937979,
+      "lon": -73.962161,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419367631,
+      "lat": 40.6907066,
+      "lon": -73.9565614,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419367656,
+      "lat": 40.6940939,
+      "lon": -73.9609816,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419368010,
+      "lat": 40.6931464,
+      "lon": -73.9679744,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 419368047,
+      "lat": 40.6932067,
+      "lon": -73.9674407,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 703549733,
+      "lat": 40.6928248,
+      "lon": -73.9698708,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 818239355,
+      "lat": 40.6904836,
+      "lon": -73.960039,
+      "name": "Dannee Thai",
+      "category": "amenity",
+      "value": "restaurant"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 1744432130,
+      "lat": 40.6874732,
+      "lon": -73.9570883,
+      "name": "Bar Birba",
+      "category": "amenity",
+      "value": "bar"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2276303570,
+      "lat": 40.6947083,
+      "lon": -73.9520814,
+      "name": "Duane Reade Pharmacy",
+      "category": "amenity",
+      "value": "pharmacy"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2276303574,
+      "lat": 40.6948405,
+      "lon": -73.9528513,
+      "name": "Cookie's",
+      "category": "amenity",
+      "value": "bar"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494064615,
+      "lat": 40.6931856,
+      "lon": -73.9671662,
+      "name": "Osteria Brooklyn",
+      "category": "amenity",
+      "value": "restaurant"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494064857,
+      "lat": 40.6930747,
+      "lon": -73.9680559,
+      "name": "Myrtle Thai",
+      "category": "amenity",
+      "value": "restaurant"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494077031,
+      "lat": 40.6930188,
+      "lon": -73.9699992,
+      "name": "Subway",
+      "category": "amenity",
+      "value": "fast_food"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494077033,
+      "lat": 40.6929818,
+      "lon": -73.9693685,
+      "name": "Myrtle Ave. Bagels",
+      "category": "amenity",
+      "value": "fast_food"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2567989961,
+      "lat": 40.6937757,
+      "lon": -73.9514252,
+      "name": "Loving Heart Mission",
+      "category": "amenity",
+      "value": "place_of_worship"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568110459,
+      "lat": 40.6869489,
+      "lon": -73.962756,
+      "name": "Su'juk",
+      "category": "amenity",
+      "value": "fortune_teller"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568119898,
+      "lat": 40.6884342,
+      "lon": -73.9551133,
+      "name": "Mi Casita",
+      "category": "amenity",
+      "value": "kindergarten"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568119904,
+      "lat": 40.6882651,
+      "lon": -73.9576111,
+      "name": "The Learning Experience",
+      "category": "amenity",
+      "value": "kindergarten"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568119907,
+      "lat": 40.6881718,
+      "lon": -73.9572415,
+      "name": "Kitten Cafe",
+      "category": "amenity",
+      "value": "cafe"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568119945,
+      "lat": 40.6878059,
+      "lon": -73.9578549,
+      "name": "Tribeca Dental Associates",
+      "category": "amenity",
+      "value": "dentist"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568120017,
+      "lat": 40.6875468,
+      "lon": -73.9595811,
+      "name": "Clementine Cafe & Bakery",
+      "category": "amenity",
+      "value": "cafe"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568133688,
+      "lat": 40.6881239,
+      "lon": -73.9629055,
+      "name": "Grand Avenue Workshop",
+      "category": "amenity",
+      "value": "arts_centre"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568133724,
+      "lat": 40.6883962,
+      "lon": -73.962964,
+      "name": "Choice Market",
+      "category": "amenity",
+      "value": "cafe"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568133732,
+      "lat": 40.6887335,
+      "lon": -73.96013,
+      "name": "New Peking",
+      "category": "amenity",
+      "value": "fast_food"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568133754,
+      "lat": 40.6879326,
+      "lon": -73.962875,
+      "name": "Guevara's",
+      "category": "amenity",
+      "value": "cafe"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568134378,
+      "lat": 40.6874721,
+      "lon": -73.9602443,
+      "name": "Framework",
+      "category": "amenity",
+      "value": "coworking_space"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568134897,
+      "lat": 40.6882566,
+      "lon": -73.9600353,
+      "name": "The Winchendon School",
+      "category": "amenity",
+      "value": "school"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568142019,
+      "lat": 40.6905905,
+      "lon": -73.9571135,
+      "name": "Famous Joe Pizzeria",
+      "category": "amenity",
+      "value": "fast_food"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568142025,
+      "lat": 40.6913628,
+      "lon": -73.9520501,
+      "name": "",
+      "category": "amenity",
+      "value": "post_box"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568142088,
+      "lat": 40.6902842,
+      "lon": -73.9551929,
+      "name": "",
+      "category": "amenity",
+      "value": "bicycle_parking"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568142090,
+      "lat": 40.6907665,
+      "lon": -73.9555634,
+      "name": "Iglesia de Dios Pentecostal",
+      "category": "amenity",
+      "value": "place_of_worship"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568179560,
+      "lat": 40.694106,
+      "lon": -73.9591645,
+      "name": "enRoys Cafe",
+      "category": "amenity",
+      "value": "cafe"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568194115,
+      "lat": 40.6913673,
+      "lon": -73.9637634,
+      "name": "Pratt Chapel",
+      "category": "amenity",
+      "value": "place_of_worship"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568194150,
+      "lat": 40.6932822,
+      "lon": -73.965652,
+      "name": "TD Bank",
+      "category": "amenity",
+      "value": "bank"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568198164,
+      "lat": 40.6939405,
+      "lon": -73.9628963,
+      "name": "U-Gu",
+      "category": "amenity",
+      "value": "restaurant"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568194120,
+      "lat": 40.6907768,
+      "lon": -73.9636557,
+      "name": "Ecstasy",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3376088166,
+      "lat": 40.6937285,
+      "lon": -73.9626289,
+      "name": "I Ought To",
+      "category": "amenity",
+      "value": "shelter"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3449179632,
+      "lat": 40.6904594,
+      "lon": -73.9648379,
+      "name": "",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3449217850,
+      "lat": 40.6910823,
+      "lon": -73.965137,
+      "name": "",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3449217851,
+      "lat": 40.691732,
+      "lon": -73.9653927,
+      "name": "",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3449217852,
+      "lat": 40.6914868,
+      "lon": -73.9651697,
+      "name": "",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3449217853,
+      "lat": 40.6912877,
+      "lon": -73.9651966,
+      "name": "",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3450529672,
+      "lat": 40.6906091,
+      "lon": -73.9640448,
+      "name": "Brickhead: Yemenja",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5021150163,
+      "lat": 40.6900492,
+      "lon": -73.9650589,
+      "name": "Red Cabinet",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 8577329328,
+      "lat": 40.6977862,
+      "lon": -73.9675939,
+      "name": "",
+      "category": "tourism",
+      "value": "information"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 8616092557,
+      "lat": 40.7008176,
+      "lon": -73.960805,
+      "name": "",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10876093580,
+      "lat": 40.697484,
+      "lon": -73.963419,
+      "name": "Boar",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10876093595,
+      "lat": 40.6974714,
+      "lon": -73.9635128,
+      "name": "Boar",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 12065670491,
+      "lat": 40.6954116,
+      "lon": -73.9516371,
+      "name": "Brooklyn",
+      "category": "tourism",
+      "value": "artwork"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 13357743370,
+      "lat": 40.6963842,
+      "lon": -73.9673243,
+      "name": "Arty Goodness",
+      "category": "tourism",
+      "value": "gallery"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 13357743372,
+      "lat": 40.6973685,
+      "lon": -73.9678589,
+      "name": "Recess",
+      "category": "tourism",
+      "value": "gallery"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 754493768,
+      "lat": 40.6869571,
+      "lon": -73.9626851,
+      "name": "Green Valley Market",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494064572,
+      "lat": 40.6933303,
+      "lon": -73.9680882,
+      "name": "Three Stars Laundromat",
+      "category": "shop",
+      "value": "laundry"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494064794,
+      "lat": 40.6933169,
+      "lon": -73.9682352,
+      "name": "Doo's Barber Shop",
+      "category": "shop",
+      "value": "hairdresser"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494064802,
+      "lat": 40.6930399,
+      "lon": -73.9683511,
+      "name": "Green in Brooklyn",
+      "category": "shop",
+      "value": "gift"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494064818,
+      "lat": 40.6930618,
+      "lon": -73.9681837,
+      "name": "T-Mobile",
+      "category": "shop",
+      "value": "mobile_phone"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494064903,
+      "lat": 40.6931783,
+      "lon": -73.9672471,
+      "name": "Salon 718",
+      "category": "shop",
+      "value": "hairdresser"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494076884,
+      "lat": 40.6920767,
+      "lon": -73.9688818,
+      "name": "Laundromat",
+      "category": "shop",
+      "value": "laundry"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494077032,
+      "lat": 40.6929762,
+      "lon": -73.9692251,
+      "name": "Mr. Coco",
+      "category": "shop",
+      "value": "greengrocer"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494113969,
+      "lat": 40.6932442,
+      "lon": -73.9696757,
+      "name": "403 Myrtle Discount LIquor",
+      "category": "shop",
+      "value": "alcohol"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2567989953,
+      "lat": 40.6940032,
+      "lon": -73.9521515,
+      "name": "New Magestic Laundry",
+      "category": "shop",
+      "value": "laundry"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568066303,
+      "lat": 40.6873075,
+      "lon": -73.9595283,
+      "name": "Green Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568067824,
+      "lat": 40.6875956,
+      "lon": -73.9571131,
+      "name": "2 Nature Market 2",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568119889,
+      "lat": 40.6887854,
+      "lon": -73.9553446,
+      "name": "Stonefruit Botanical",
+      "category": "shop",
+      "value": "florist"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568119892,
+      "lat": 40.6893447,
+      "lon": -73.9549235,
+      "name": "Olive Tasty Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568119916,
+      "lat": 40.688318,
+      "lon": -73.9572708,
+      "name": "GKK Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568119923,
+      "lat": 40.6888654,
+      "lon": -73.9551955,
+      "name": "L'Impasse Boutique",
+      "category": "shop",
+      "value": "clothes"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568119946,
+      "lat": 40.688718,
+      "lon": -73.9573576,
+      "name": "Family Dollar",
+      "category": "shop",
+      "value": "variety_store"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568120037,
+      "lat": 40.6903045,
+      "lon": -73.9551306,
+      "name": "Metro by T-Mobile",
+      "category": "shop",
+      "value": "mobile_phone"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568133728,
+      "lat": 40.688465,
+      "lon": -73.9626584,
+      "name": "Stop One Deli & Grocery",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568142045,
+      "lat": 40.6908921,
+      "lon": -73.9566501,
+      "name": "Angel Dry Cleaners",
+      "category": "shop",
+      "value": "dry_cleaning"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568159036,
+      "lat": 40.6908174,
+      "lon": -73.9574304,
+      "name": "Delalb Funeral Services",
+      "category": "shop",
+      "value": "funeral_directors"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568159094,
+      "lat": 40.6908216,
+      "lon": -73.9571362,
+      "name": "Score Spaces",
+      "category": "shop",
+      "value": "furniture"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568159105,
+      "lat": 40.6907455,
+      "lon": -73.9558513,
+      "name": "Ginger Lily Hair Salon",
+      "category": "shop",
+      "value": "hairdresser"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568159136,
+      "lat": 40.6909963,
+      "lon": -73.9555992,
+      "name": "Gourmet Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568163543,
+      "lat": 40.6948657,
+      "lon": -73.9526277,
+      "name": "158 Deli Grocery",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568163556,
+      "lat": 40.6948067,
+      "lon": -73.9531516,
+      "name": "Nice & Clean Laundromat",
+      "category": "shop",
+      "value": "laundry"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568165635,
+      "lat": 40.694622,
+      "lon": -73.9546507,
+      "name": "MH Vacuum & Sewing Machines",
+      "category": "shop",
+      "value": "vacuum_cleaner"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568165638,
+      "lat": 40.6946389,
+      "lon": -73.9545127,
+      "name": "City 99¢ Store",
+      "category": "shop",
+      "value": "variety_store"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568165644,
+      "lat": 40.6946898,
+      "lon": -73.9540588,
+      "name": "Petit Clair",
+      "category": "shop",
+      "value": "clothes"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568175977,
+      "lat": 40.6944377,
+      "lon": -73.9563565,
+      "name": "",
+      "category": "shop",
+      "value": "butcher"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568175988,
+      "lat": 40.6944431,
+      "lon": -73.9562803,
+      "name": "The Wine Cave",
+      "category": "shop",
+      "value": "alcohol"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568194153,
+      "lat": 40.6936435,
+      "lon": -73.9652572,
+      "name": "497 Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568194156,
+      "lat": 40.6936048,
+      "lon": -73.9655877,
+      "name": "Corkscrew Wines",
+      "category": "shop",
+      "value": "alcohol"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568194158,
+      "lat": 40.6933022,
+      "lon": -73.9654817,
+      "name": "Honey Nail Salon",
+      "category": "shop",
+      "value": "beauty"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568194161,
+      "lat": 40.6933504,
+      "lon": -73.9650715,
+      "name": "Key Food",
+      "category": "shop",
+      "value": "supermarket"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568196180,
+      "lat": 40.6949245,
+      "lon": -73.9541916,
+      "name": "Buy & Save",
+      "category": "shop",
+      "value": "appliance"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568198127,
+      "lat": 40.694021,
+      "lon": -73.9620791,
+      "name": "Pronto Gourmet & Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568198165,
+      "lat": 40.6939291,
+      "lon": -73.9629995,
+      "name": "Farmer in the Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568198178,
+      "lat": 40.6946725,
+      "lon": -73.9563733,
+      "name": "Jazmin Grocery & Fruits",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568198198,
+      "lat": 40.6952588,
+      "lon": -73.9564612,
+      "name": "Starchers",
+      "category": "shop",
+      "value": "dry_cleaning"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568198205,
+      "lat": 40.694849,
+      "lon": -73.9563657,
+      "name": "Ink Ambitions",
+      "category": "shop",
+      "value": "tattoo"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568202453,
+      "lat": 40.6966851,
+      "lon": -73.9585849,
+      "name": "Highstyle Stone & Tile",
+      "category": "shop",
+      "value": "tiles"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568207245,
+      "lat": 40.6935962,
+      "lon": -73.9656614,
+      "name": "Hair & Co Bklyn",
+      "category": "shop",
+      "value": "hairdresser"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568219123,
+      "lat": 40.693229,
+      "lon": -73.9666831,
+      "name": "Nycpet.com",
+      "category": "shop",
+      "value": "pet"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568243086,
+      "lat": 40.6896267,
+      "lon": -73.9655351,
+      "name": "322 Dekalb Grocery",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2605399145,
+      "lat": 40.6945438,
+      "lon": -73.9553589,
+      "name": "Chestnut",
+      "category": "shop",
+      "value": "supermarket"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2605399152,
+      "lat": 40.6967012,
+      "lon": -73.9689166,
+      "name": "The Owl & The Pussycat Salon",
+      "category": "shop",
+      "value": "hairdresser"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2605399158,
+      "lat": 40.6929883,
+      "lon": -73.9694429,
+      "name": "Metro by T-Mobile",
+      "category": "shop",
+      "value": "mobile_phone"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2837938566,
+      "lat": 40.7002277,
+      "lon": -73.957105,
+      "name": "Steinburg's Bakery",
+      "category": "shop",
+      "value": "bakery"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3316229666,
+      "lat": 40.6930872,
+      "lon": -73.9679748,
+      "name": "Metro Market Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3316229667,
+      "lat": 40.6931213,
+      "lon": -73.9676792,
+      "name": "Myrtle Pharmacy",
+      "category": "amenity",
+      "value": "pharmacy"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3636117708,
+      "lat": 40.6876108,
+      "lon": -73.9595991,
+      "name": "Outsiders",
+      "category": "shop",
+      "value": "hairdresser"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 3808253689,
+      "lat": 40.6909199,
+      "lon": -73.9543353,
+      "name": "Organic Fresh Deli & Juice Bar",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 4316449698,
+      "lat": 40.694847,
+      "lon": -73.9527937,
+      "name": "750 Myrtle Diner",
+      "category": "amenity",
+      "value": "fast_food"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 4316479491,
+      "lat": 40.6909611,
+      "lon": -73.9559703,
+      "name": "Hair Styles By Design",
+      "category": "shop",
+      "value": "hairdresser"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5206201848,
+      "lat": 40.6938008,
+      "lon": -73.9618756,
+      "name": "Bella Rosa",
+      "category": "shop",
+      "value": "florist"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5206201849,
+      "lat": 40.6938154,
+      "lon": -73.961751,
+      "name": "Fantastic Cleaners",
+      "category": "shop",
+      "value": "dry_cleaning"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5221377127,
+      "lat": 40.6893614,
+      "lon": -73.9568553,
+      "name": "Gourmet Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5221377181,
+      "lat": 40.6908525,
+      "lon": -73.9569922,
+      "name": "Keily Barber Shop",
+      "category": "shop",
+      "value": "hairdresser"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5221377541,
+      "lat": 40.6890934,
+      "lon": -73.9570943,
+      "name": "Fan-Fan Doughnuts",
+      "category": "shop",
+      "value": "pastry"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5931761585,
+      "lat": 40.6938649,
+      "lon": -73.9556709,
+      "name": "Atlantis Super Wash",
+      "category": "shop",
+      "value": "laundry"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949200229,
+      "lat": 40.6935073,
+      "lon": -73.963735,
+      "name": "Blick Art Materials",
+      "category": "shop",
+      "value": "craft"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949456894,
+      "lat": 40.694832,
+      "lon": -73.9529264,
+      "name": "Mona Ayala",
+      "category": "amenity",
+      "value": "fast_food"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949456897,
+      "lat": 40.6948551,
+      "lon": -73.9527215,
+      "name": "Lucky Liquor Wine",
+      "category": "shop",
+      "value": "alcohol"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949593066,
+      "lat": 40.6946307,
+      "lon": -73.9545771,
+      "name": "Clothesout",
+      "category": "shop",
+      "value": "clothes"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949703987,
+      "lat": 40.6945506,
+      "lon": -73.9574529,
+      "name": "Chinantla Restaurant Deli & Grocery",
+      "category": "amenity",
+      "value": "fast_food"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949703988,
+      "lat": 40.6940192,
+      "lon": -73.9598547,
+      "name": "Abuela's Tattoo Parlor",
+      "category": "shop",
+      "value": "tattoo"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949703989,
+      "lat": 40.6944406,
+      "lon": -73.9585539,
+      "name": "Cholula II",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949703990,
+      "lat": 40.6940084,
+      "lon": -73.9599152,
+      "name": "AB New York Salon",
+      "category": "shop",
+      "value": "hairdresser"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949703998,
+      "lat": 40.69405,
+      "lon": -73.9596195,
+      "name": "Stephanie Deli Grocery",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949703999,
+      "lat": 40.6942642,
+      "lon": -73.9577404,
+      "name": "Judaica",
+      "category": "shop",
+      "value": "religion"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 5949704000,
+      "lat": 40.6942676,
+      "lon": -73.9599694,
+      "name": "Danny Deli",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 6388091249,
+      "lat": 40.6898386,
+      "lon": -73.9656223,
+      "name": "Apple Art Supplies",
+      "category": "shop",
+      "value": "craft"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 6680727390,
+      "lat": 40.6887251,
+      "lon": -73.9603175,
+      "name": "Healthy Bites Gourmet",
+      "category": "shop",
+      "value": "convenience"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 6681744659,
+      "lat": 40.688758,
+      "lon": -73.9628154,
+      "name": "The Food Emporium",
+      "category": "shop",
+      "value": "supermarket"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 6876131135,
+      "lat": 40.6905871,
+      "lon": -73.959228,
+      "name": "C-Town",
+      "category": "shop",
+      "value": "supermarket"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2494064809,
+      "lat": 40.6930493,
+      "lon": -73.9682659,
+      "name": "Champions Martial Arts",
+      "category": "leisure",
+      "value": "sports_centre"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 2568219104,
+      "lat": 40.6932744,
+      "lon": -73.968499,
+      "name": "Move With Grace",
+      "category": "amenity",
+      "value": "fast_food"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 7147454647,
+      "lat": 40.688096,
+      "lon": -73.9655874,
+      "name": "Grey's Gym",
+      "category": "leisure",
+      "value": "fitness_centre"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 7161457144,
+      "lat": 40.6874272,
+      "lon": -73.9605265,
+      "name": "Dou Yoga",
+      "category": "leisure",
+      "value": "fitness_centre"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 9583805197,
+      "lat": 40.6938226,
+      "lon": -73.9637584,
+      "name": "CKO Kickboxing",
+      "category": "leisure",
+      "value": "fitness_centre"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 9834745958,
+      "lat": 40.6964728,
+      "lon": -73.9625679,
+      "name": "The Factory NYC",
+      "category": "leisure",
+      "value": "hackerspace"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10611901521,
+      "lat": 40.6929794,
+      "lon": -73.9692989,
+      "name": "Brooklyn Brazilan Jiu-Jitsu",
+      "category": "leisure",
+      "value": "sports_centre"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10876093576,
+      "lat": 40.6973851,
+      "lon": -73.9635753,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10876093579,
+      "lat": 40.6974893,
+      "lon": -73.9635651,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10876093581,
+      "lat": 40.6975403,
+      "lon": -73.9636081,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10876093585,
+      "lat": 40.6975027,
+      "lon": -73.9634116,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10876093586,
+      "lat": 40.6975134,
+      "lon": -73.9633913,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10876093588,
+      "lat": 40.6974786,
+      "lon": -73.9635398,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 10876093596,
+      "lat": 40.697308,
+      "lon": -73.9633695,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11101918528,
+      "lat": 40.6995415,
+      "lon": -73.9616753,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11101918529,
+      "lat": 40.6995804,
+      "lon": -73.9616257,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11101918530,
+      "lat": 40.6996159,
+      "lon": -73.9615815,
+      "name": "",
+      "category": "leisure",
+      "value": "picnic_table"
+    },
+    {
+      "osm_type": "node",
+      "osm_id": 11875989666,
+      "lat": 40.6974861,
+      "lon": -73.9678792,
+      "name": "1.2.1 Fitness",
+      "category": "leisure",
+      "value": "fitness_centre"
+    }
+  ]
+}
