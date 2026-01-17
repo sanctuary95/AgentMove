@@ -86,7 +86,7 @@ class Agent:
         """
         Predict the next POI based on trajectory sequences, fetched POIs, and stay points.
         Returns:
-            dict: predictions dict with keys: input/output/prediction/reason (+ optional metadata)
+            dict: predictions dict with keys: input/output/prediction (+ optional metadata)
         """
         if stay_points is None:
             stay_points = self.stay_points  # Use instance-level stay_points by default
@@ -125,7 +125,7 @@ class Agent:
         pre_text = self.llm_model.get_response(prompt_text=prompt_text)
 
         # Prediction results extraction
-        # 先尝试 prediction，再兜底 recommendation（因为你原始代码是 recommendation）
+        # �ȳ��� prediction���ٶ��� recommendation����Ϊ��ԭʼ������ recommendation��
         output_json, prediction, reason = extract_json(pre_text, prediction_key="prediction")
         if not prediction:
             output_json, prediction, reason = extract_json(pre_text, prediction_key="recommendation")
@@ -196,8 +196,12 @@ class Agents:
 
         self.trajs_sampling(test_dataset)
 
-        # 输出路径：每条预测一行 JSON
-        self.outputs_jsonl_path = os.path.join("outputs", "predictions.jsonl")
+        # ���·����ÿ��Ԥ��һ�� JSON
+        #self.outputs_jsonl_path = os.path.join(self.save_dir, "predictions.jsonl")
+        self.outputs_jsonl_path = os.path.join(
+    "outputs", self.exp_name,  "predictions.jsonl"
+        )   
+	    # self.outputs_jsonl_path = os.path.join("outputs", self.exp_name, self.city_name, self.model_name, self.prompt_type, "predictions.jsonl")
 
     def trajs_sampling(self, test_dataset):
         counter = 0
@@ -223,11 +227,8 @@ class Agents:
 
                 counter += 1
                 traj_count += 1
-                if self.sample_one_traj_of_user:
+                if traj_count >= self.max_sample_trajectories:
                     break
-                else:
-                    if traj_count > self.max_sample_trajectories:
-                        break
 
             self.trajectory_groups.append(tuple(traj_list))
             self.known_stays[user_id] = v[traj_ids[0]]["historical_stays_long"]
@@ -346,14 +347,38 @@ class Agents:
         true_value = self.ground_data[user_id][traj_id]
         pred = agent.predict(user_id, traj_id, traj_seqs, target_stay, true_value, stay_points)
 
-        # prev check-in (current location before predicting next)
+        # ��װ�����next check-in = predicted next POI id (top1)
         prev_lat = traj_seqs["context_pos"][-1][1]
         prev_lon = traj_seqs["context_pos"][-1][0]
 
-        # keep only requested outputs
         prediction = pred.get("prediction", None)
         reason = pred.get("reason", "")
 
+        # top1 = None
+        # topk = None
+        # if isinstance(prediction_list, list) and len(prediction_list) > 0:
+        #     topk = prediction_list
+        #     top1 = prediction_list[0]
+        # else:
+        #     # ����ʧ��ʱ�������� str / None��Ҳ���̱��� debug
+        #     topk = prediction_list
+        #     top1 = None
+
+        # record = {
+        #     "ts": datetime.utcnow().isoformat() + "Z",
+        #     "city_name": self.city_name,
+        #     "exp_name": self.exp_name,
+        #     "platform": self.platform,
+        #     "model_name": self.model_name,
+        #     "prompt_type": self.prompt_type,
+        #     "user_id": user_id,
+        #     "traj_id": traj_id,
+        #     "prev_checkin": {"lat": prev_lat, "lon": prev_lon},
+        #     "true_next_poi": true_value.get("ground_stay"),
+        #     "predicted_next_poi": top1,
+        #     "predicted_topk_pois": topk,
+        #     "llm_output_json": pred.get("output"),
+        # }
         record = {
             "user_id": user_id,
             "traj_id": traj_id,
