@@ -33,20 +33,20 @@ class LLMAPI:
     def __init__(self, model_name, platform=None):
         self.model_name = model_name
 
-        # === 2) platform_list 增加 TogetherAI ===
+        # === 2) platform_list å¢žåŠ  TogetherAI ===
         self.platform_list = ["SiliconFlow", "OpenAI", "DeepInfra", 'vllm', "OpenRouter", "TogetherAI"]
 
-        # === 3) model_platforms 增加 TogetherAI（示例：先放你需要的几个短名）===
+        # === 3) model_platforms å¢žåŠ  TogetherAIï¼ˆç¤ºä¾‹ï¼šå…ˆæ”¾ä½ éœ€è¦çš„å‡ ä¸ªçŸ­åï¼‰===
         self.model_platforms = {
             "SiliconFlow":  [],
             "OpenAI":       [],
             "OpenRouter":   [],
             "DeepInfra":    [],
             "vllm":         [],
-            "TogetherAI":   [ 'llama3.3-70b-together', 'Qwen 2.5 72B Instruct Turbo', 'DeepSeek-V3.1', 'Llama 3.1 8B Instruct Turbo','DeepSeek-R1-0528','GPT-OSS 20B']  # 你可以按需增删
+            "TogetherAI":   [ 'llama3.3-70b-together', 'Qwen 2.5 72B Instruct Turbo', 'DeepSeek-V3.1', 'Llama 3.1 8B Instruct Turbo','DeepSeek-R1-0528','GPT-OSS 20B']  # ä½ å¯ä»¥æŒ‰éœ€å¢žåˆ 
         }
 
-        # === 4) model_mapper 增加 TogetherAI 模型映射 ===
+        # === 4) model_mapper å¢žåŠ  TogetherAI æ¨¡åž‹æ˜ å°„ ===
         self.model_mapper = {
                 'llama3.3-70b-together': 'meta-llama/Llama-3.3-70B-Instruct-Turbo',
                 'Qwen 2.5 72B Instruct Turbo': 'Qwen/Qwen2.5-72B-Instruct-Turbo',
@@ -59,11 +59,11 @@ class LLMAPI:
         # Decide platform
         self.platform = None
         
-        # 如果用户显式传了 platform 且合法，就用它
+        # å¦‚æžœç”¨æˆ·æ˜¾å¼ä¼ äº† platform ä¸”åˆæ³•ï¼Œå°±ç”¨å®ƒ
         if platform is not None and platform in self.platform_list:
             self.platform = platform
         else:
-            # 否则根据 model_name 自动匹配
+            # å¦åˆ™æ ¹æ® model_name è‡ªåŠ¨åŒ¹é…
             for p in self.platform_list:
                 if self.model_name in self.model_platforms.get(p, []):
                     self.platform = p
@@ -72,30 +72,30 @@ class LLMAPI:
         if self.platform is None:
             raise ValueError(f"Invalid API platform:{self.platform} with model:{self.model_name}")
         
-        # 校验：模型名必须属于该平台
+        # æ ¡éªŒï¼šæ¨¡åž‹åå¿…é¡»å±žäºŽè¯¥å¹³å°
         if self.model_name not in self.model_platforms[self.platform]:
             support_models = ";".join([";".join(self.model_platforms[k]) for k in self.model_platforms])
             raise ValueError(
                 f"Invalid model name {self.model_name}! Please use one of: {support_models} in platform {self.platform}"
             )
 
-        # === 5) client 初始化增加 TogetherAI ===
+        # === 5) client åˆå§‹åŒ–å¢žåŠ  TogetherAI ===
         if self.platform == "OpenAI":
             self.client = OpenAI(
                 api_key=get_api_key(platform),
-                http_client=httpx.Client(proxies=PROXY),
+                http_client=httpx.Client(),
             )
         if self.platform == "OpenRouter":
             self.client = OpenAI(
                 base_url="https://openrouter.ai/api/v1",
                 api_key=get_api_key(platform),
-                http_client=httpx.Client(proxies=PROXY),
+                http_client=httpx.Client(),
             )
         elif self.platform == "DeepInfra":
             self.client = OpenAI(
                 base_url="https://api.deepinfra.com/v1/openai",
                 api_key=get_api_key(platform),
-                http_client=httpx.Client(proxies=PROXY),
+                http_client=httpx.Client(),
             )
         elif self.platform == "SiliconFlow":
             self.client = OpenAI(
@@ -111,7 +111,7 @@ class LLMAPI:
             self.client = OpenAI(
                 base_url="https://api.together.xyz/v1",
                 api_key=get_api_key(platform),
-                http_client=httpx.Client(proxies=PROXY),
+                http_client=httpx.Client(),
             )
     
     def get_client(self):
