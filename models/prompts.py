@@ -1,5 +1,5 @@
 from utils import haversine_distance
-
+import json  # È·±£¼ÓÈë´ËÐÐ
 COMMON_PROMPT = """
 ## Task
 Your task is to predict <next_place_id> in <target_stay>, a location with an unknown ID, while temporal data is available.
@@ -77,14 +77,13 @@ def prompt_generator_llmzs(v):
     return prompt
 
 
-def prompt_generator_agent(v, prompt_type, spatial_world_info, memory_info, social_world_info):
+def prompt_generator_agent(v, prompt_type, spatial_world_info, memory_info, social_world_info, poi_info):
     prompt = ''
     if prompt_type == "agent_move_v6":
         prompt = f"""
 {COMMON_PROMPT}
 3. The potential places that users may visit based on an overall analysis of multi-level urban spaces.
 4. The personal profile and memory info extracted from the long trajectory history of each user.
-
 
 ## The potential places from the global spatial view:
 {spatial_world_info}
@@ -101,11 +100,12 @@ def prompt_generator_agent(v, prompt_type, spatial_world_info, memory_info, soci
 <context_stays>: {[[item[0], item[1], item[2], item[3], ",".join((item[5],item[7],item[6]))] for item in v['context_stays']]}
 <target_stay>: {[v['target_stay'][0], v['target_stay'][1], v['target_stay'][2]]}
 
+## Nearby Points of Interest:
+{json.dumps(poi_info, ensure_ascii=False, indent=2)}  # Added POI data
+
 {OUTPUT_PROMPT}
 """
-
     return prompt
-
 
 def prompt_generator_llmmove(v, rec):
     prompt =f"""\
