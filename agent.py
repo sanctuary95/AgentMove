@@ -86,7 +86,7 @@ class Agent:
         """
         Predict the next POI based on trajectory sequences, fetched POIs, and stay points.
         Returns:
-            dict: predictions dict with keys: input/output/prediction (+ optional metadata)
+            dict: predictions dict with keys: input/output/prediction/reason (+ optional metadata)
         """
         if stay_points is None:
             stay_points = self.stay_points  # Use instance-level stay_points by default
@@ -134,6 +134,7 @@ class Agent:
             "input": prompt_text,
             "output": output_json,
             "prediction": prediction,
+            "reason": reason,
         }
         return predictions
 
@@ -345,36 +346,21 @@ class Agents:
         true_value = self.ground_data[user_id][traj_id]
         pred = agent.predict(user_id, traj_id, traj_seqs, target_stay, true_value, stay_points)
 
-        # 组装输出：next check-in = predicted next POI id (top1)
+        # prev check-in (current location before predicting next)
         prev_lat = traj_seqs["context_pos"][-1][1]
         prev_lon = traj_seqs["context_pos"][-1][0]
 
-        prediction_list = pred.get("prediction", None)
-
-        top1 = None
-        topk = None
-        if isinstance(prediction_list, list) and len(prediction_list) > 0:
-            topk = prediction_list
-            top1 = prediction_list[0]
-        else:
-            # 解析失败时，可能是 str / None；也落盘便于 debug
-            topk = prediction_list
-            top1 = None
+        # keep only requested outputs
+        prediction = pred.get("prediction", None)
+        reason = pred.get("reason", "")
 
         record = {
-            "ts": datetime.utcnow().isoformat() + "Z",
-            "city_name": self.city_name,
-            "exp_name": self.exp_name,
-            "platform": self.platform,
-            "model_name": self.model_name,
-            "prompt_type": self.prompt_type,
             "user_id": user_id,
             "traj_id": traj_id,
             "prev_checkin": {"lat": prev_lat, "lon": prev_lon},
             "true_next_poi": true_value.get("ground_stay"),
-            "predicted_next_poi": top1,
-            "predicted_topk_pois": topk,
-            "llm_output_json": pred.get("output"),
+            "prediction": prediction,
+            "reason": reason,
         }
 
         _append_jsonl(self.outputs_jsonl_path, record)
