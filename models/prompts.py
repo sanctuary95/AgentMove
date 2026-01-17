@@ -1,5 +1,5 @@
 from utils import haversine_distance
-import json  # È·±£¼ÓÈë´ËÐÐ
+import json  # 确保加入此行
 COMMON_PROMPT = """
 ## Task
 Your task is to predict <next_place_id> in <target_stay>, a location with an unknown ID, while temporal data is available.
