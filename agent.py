@@ -6,6 +6,9 @@ import random
 import argparse
 import multiprocessing
 from datetime import datetime
+import argparse
+from models.prompts import prompt_generator_agent
+
 
 from processing.data import Dataset
 from models.llm_api import LLMWrapper
@@ -15,10 +18,57 @@ from models.prompts import prompt_generator
 from utils import create_dir, extract_json, haversine_distance
 from config import PROXY, PROCESSED_DIR
 random.seed(100)
+import os
+import json
+import asyncio
+from processing.data import Dataset
+from models.llm_api import LLMWrapper
+from models.world_model import SpatialWorld, SocialWorld
+from models.personal_memory import Memory
+from utils import create_dir, extract_json, haversine_distance
+from config import PROXY, PROCESSED_DIR
+from run_llm_with_poi_mcp import _fetch_pois_via_mcp  # Importing the POI fetch logic
 
+import os
+import json
+import asyncio
+from datetime import datetime
+from processing.data import Dataset
+from models.llm_api import LLMWrapper
+from models.world_model import SpatialWorld, SocialWorld
+from models.personal_memory import Memory
+from models.prompts import prompt_generator
+from utils import create_dir, extract_json, haversine_distance
+from config import PROXY, PROCESSED_DIR
+from run_llm_with_poi_mcp import _fetch_pois_via_mcp  # Importing the POI fetch logic
+import os
+import json
+import asyncio
+from processing.data import Dataset
+from models.llm_api import LLMWrapper
+from models.world_model import SpatialWorld, SocialWorld
+from models.personal_memory import Memory
+from utils import create_dir, extract_json, haversine_distance
+from config import PROXY, PROCESSED_DIR
+from run_llm_with_poi_mcp import _fetch_pois_via_mcp
 
 class Agent:
     def __init__(self, city_name, platform, model_name, spatial_world: SpatialWorld, social_world: SocialWorld, memory_unit: Memory, prompt_type, save_dir, use_int_venue, social_info_type):
+        """
+        Initializes the Agent class.
+        
+        Args:
+            city_name (str): The name of the city for running the experiments.
+            platform (str): The platform used for running the LLM model.
+            model_name (str): The name of the LLM model.
+            spatial_world (SpatialWorld): Object for spatial world computation.
+            social_world (SocialWorld): Object for social world computation.
+            memory_unit (Memory): Object for personal memory.
+            prompt_type (str): The type of prompt to be generated.
+            save_dir (str): The directory where outputs will be saved.
+            use_int_venue (bool): Whether to use intermediate venue information.
+            social_info_type (str): The type of social information considered.
+        """
         self.city_name = city_name
         self.platform = platform
         self.model_name = model_name
@@ -32,63 +82,107 @@ class Agent:
         self.save_dir = save_dir
         self.use_int_venue = use_int_venue
         self.social_info_type = social_info_type
+        self.stay_points = None  # Placeholder for stay points data, if needed elsewhere
 
-    def predict(self, user_id, traj_id, traj_seqs, target_stay, true_value, stay_points):
+    async def get_nearby_pois(self, prev_lat: float, prev_lon: float, repo_root: str) -> dict:
+        """
+        Fetch nearby POIs based on the given latitude and longitude.
 
-        # spatial world model info
+        Args:
+            prev_lat (float): Latitude of the previous check-in location.
+            prev_lon (float): Longitude of the previous check-in location.
+            repo_root (str): The root directory of the repository.
+
+        Returns:
+            dict: Nearby POIs as a dictionary.
+        """
+        try:
+            pois = await _fetch_pois_via_mcp(
+                repo_root=repo_root,
+                lat=prev_lat,
+                lon=prev_lon,
+                radius_m=800,          # Default radius in meters
+                poi_keys=None,
+                name_query=None,
+                limit=60,              # Limit number of POIs
+                timeout_overpass_s=60,
+                split_by_key=True,
+                compact=True,
+                include_tags=False,
+            )
+            return pois
+        except Exception as e:
+            print(f"Failed to fetch POIs: {e}")
+            return {}
+
+    def predict(self, user_id, traj_id, traj_seqs, target_stay, true_value, stay_points=None):
+        """
+        Predict the next POI based on trajectory sequences, fetched POIs, and stay points.
+
+        Args:
+            user_id (str): The ID of the user whose trajectory is being predicted.
+            traj_id (str): The ID of the trajectory.
+            traj_seqs (dict): Dictionary containing trajectory sequences.
+            target_stay (dict): Information about the target stay.
+            true_value (dict): Dictionary containing the true value (ground truth).
+            stay_points (dict): Optional; Dictionary of stay points (default=None).
+
+        Returns:
+            dict: A dictionary containing the predictions.
+        """
+        if stay_points is None:
+            stay_points = self.stay_points  # Use instance-level stay_points by default
+
+        # Spatial world model info
         spatial_world_info = self.spatial_world.get_world_info()
 
-        # personal memory
+        # Personal memory
         memory_info = self.memory_unit.read_memory(user_id, target_stay)
 
-        # social world mdoel
+        # Social world model
         last_venue_id = traj_seqs["context_stays"][-1][3]
         self_history_points = [x[3] for x in traj_seqs["context_stays"]]
         social_world_info = self.social_world.get_world_info(last_venue_id, self_history_points, self.social_info_type)
 
-        # prepare candiates fro baseline llmmove
-        candidate_poi_info = dict()
-        output = dict()
-        if self.prompt_type == "llmmove":
-            all_pois = list(stay_points.keys())
-            tar_poi = int(true_value['ground_stay'])
-            # 5 is the limit for candidate POIs within a 5km range of the correct option, and 99 ensures that each prediction matches the original paper's setting, which is 100 options
-            candidates_within_xkm = 5
-            for poi in all_pois:
-                if haversine_distance(stay_points[poi]['pos'][1],stay_points[poi]['pos'][0],traj_seqs['context_pos'][-1][1],traj_seqs['context_pos'][-1][0]) < 5:
-                    candidate_poi_info.update({poi: stay_points[poi]})
-                    if len(candidate_poi_info) > 99:
-                        break
-            # print(len(candidate_poi_info))
+        # Previous check-in point coordinates
+        prev_lat = traj_seqs["context_pos"][-1][1]
+        prev_lon = traj_seqs["context_pos"][-1][0]
+        repo_root = os.path.abspath(os.getcwd())
 
-        # final prompt
-        prompt_text = prompt_generator(traj_seqs, self.prompt_type, spatial_world_info, memory_info, social_world_info, candidate_poi_info)
+        # Fetch nearby POIs asynchronously
+        poi_info = asyncio.run(self.get_nearby_pois(prev_lat, prev_lon, repo_root))
+
+        # Final prompt: add nearby POI info to the prompt
+        prompt_text = prompt_generator_agent(
+            traj_seqs,
+            self.prompt_type,
+            spatial_world_info,
+            memory_info,
+            social_world_info,
+            poi_info
+        )
+
         pre_text = self.llm_model.get_response(prompt_text=prompt_text)
 
-        # prediction results extraction
-        if self.prompt_type == "llmmove":
-            output_json, prediction, reason = extract_json(pre_text, prediction_key="recommendation")
-            true_venue = tar_poi
-        else:
-            output_json, prediction, reason = extract_json(pre_text, prediction_key="prediction")
-            # true_addr = true_value["ground_addr"]
-            true_venue = true_value["ground_stay"]
+        # Prediction results extraction
+        output_json, prediction, reason = extract_json(pre_text, prediction_key="recommendation")
+        true_venue = true_value["ground_stay"]
 
         predictions = {
             'input': prompt_text,
             'output': output_json,
             'prediction': prediction,
-            'reason': reason,
-            'true': true_venue  
         }
 
-        # Construct the filename with model type and save to file
-        filename = f"{self.llm_model.model_name}_{self.prompt_type}_{user_id}_{traj_id}_{self.use_int_venue}.json"
-        file_path = os.path.join(self.save_dir, filename)
-        with open(file_path, 'w') as f:
-            json.dump(predictions, f, indent=4)
+        return predictions
 
-
+    def get_predictions(self):
+        """
+        Placeholder method to trigger the prediction process for multiple trajectories.
+        
+        Should be implemented if you want to iterate over multiple users and trajectories.
+        """
+        raise NotImplementedError("Define how predictions are generated for each user and trajectory.")
 class Agents:
     def __init__(self, platform, model_name, prompt_type, city_name, prompt_num, use_int_venue, dataset: Dataset, workers=1, exp_name="",
                  traj_min_len=3, traj_max_len=100, sample_one_traj_of_user=False, social_world: SocialWorld=None, social_info_type='address', memory_lens=15,
